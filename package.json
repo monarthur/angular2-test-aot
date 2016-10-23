@@ -7,7 +7,9 @@
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "typings": "typings"
+    "typings": "typings",
+    "build:aot": "ngc -p tsconfig-aot.json && rollup -c rollup-config.js",
+    "lite:aot": "lite-server -c aot/bs-config.json"
   },
   "licenses": [
     {
@@ -18,11 +20,13 @@
   "dependencies": {
     "@angular/common": "~2.1.0",
     "@angular/compiler": "~2.1.0",
+    "@angular/compiler-cli": "^2.1.1",
     "@angular/core": "~2.1.0",
     "@angular/forms": "~2.1.0",
     "@angular/http": "~2.1.0",
     "@angular/platform-browser": "~2.1.0",
     "@angular/platform-browser-dynamic": "~2.1.0",
+    "@angular/platform-server": "^2.1.1",
     "@angular/router": "~3.1.0",
     "@angular/upgrade": "~2.1.0",
     "angular-in-memory-web-api": "~0.1.5",
@@ -36,7 +40,11 @@
   "devDependencies": {
     "concurrently": "^3.0.0",
     "lite-server": "^2.2.2",
+    "rollup": "^0.36.3",
+    "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
     "typescript": "^2.0.3",
-    "typings":"^1.4.0"
+    "typings": "^1.4.0"
   }
 }
